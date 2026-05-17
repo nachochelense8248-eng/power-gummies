@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Gummies - Preentreno + Quemador de Grasa</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "DM Sans", sans-serif;
+      background: #ffffff;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* ====== HOT SALE BANNER ====== */
+    .pg-hotsale-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "DM Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 11px 12px;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 35%, #2a1a1f 65%, #1a1a1a 100%);
+      box-shadow: 0 2px 10px rgba(255, 20, 147, 0.15);
+      border-bottom: 1px solid rgba(255, 20, 147, 0.2);
+    }
+
+    .pg-hotsale-bar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 150%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 30%,
+        rgba(255,20,147,0.25) 45%,
+        rgba(255,20,147,0.45) 50%,
+        rgba(255,20,147,0.25) 55%,
+        rgba(255,255,255,0) 70%
+      );
+      animation: pgMetallicShine 3.5s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes pgMetallicShine {
+      0%   { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    .pg-hotsale-content {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pg-hotsale-flame {
+      display: inline-block;
+      animation: pgFlamePulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes pgFlamePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    .pg-hotsale-text {
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .pg-hotsale-timer {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 4px;
+    }
+
+    .pg-hotsale-box {
+      background: rgba(255, 20, 147, 0.15);
+      border: 1.5px solid #ff1493;
+      border-radius: 5px;
+      padding: 4px 8px;
+      min-width: 32px;
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      font-size: 14px;
+      color: #ff1493;
+      box-shadow: inset 0 1px 0 rgba(255, 20, 147, 0.2), 0 0 8px rgba(255, 20, 147, 0.2);
+    }
+
+    .pg-hotsale-sep {
+      font-weight: 800;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Espaciado para contenido debajo del banner fijo */
+    body > div:not(.pg-hotsale-bar) {
+      padding-top: 50px;
+    }
+
+    @media (max-width: 480px) {
+      .pg-hotsale-bar {
+        font-size: 13px;
+        padding: 9px 8px;
+        letter-spacing: 0.3px;
+      }
+      .pg-hotsale-content {
+        gap: 7px;
+      }
+      .pg-hotsale-box {
+        padding: 3px 6px;
+        min-width: 28px;
+        font-size: 13px;
+      }
+      body > div:not(.pg-hotsale-bar) {
+        padding-top: 45px;
+      }
+    }
+
+    /* ====== PRODUCT INTRO ====== */
+    .pg-product-intro {
+      padding: 16px 16px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .pg-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .pg-stars {
+      color: #ff1493;
+      font-size: 17px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .pg-rating-text {
+      font-size: 13px;
+      color: #333;
+      font-weight: 500;
+    }
+    .pg-intro-title {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #000;
+      margin-bottom: 14px;
+    }
+    .pg-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .pg-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 20, 147, 0.2);
+      font-size: 13px;
+      line-height: 1.5;
+      color: #222;
+    }
+    .pg-bullets li:last-child {
+      border-bottom: none;
+    }
+    .pg-check {
+      background: linear-gradient(135deg, #ff1493 0%, #ff0080 100%);
+      color: white;
+      border-radius: 50%;
+      width: 19px;
+      height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(255, 20, 147, 0.4);
+    }
+    .pg-bullets li:hover {
+      color: #000;
+      border-bottom-color: rgba(255, 20, 147, 0.5);
+    }
+    .pg-bullets li strong {
+      color: #ff1493;
+      font-weight: 700;
+    }
+
+    /* ====== TRUST SECTION ====== */
+    .pg-trust-section-custom {
+      padding: 18px 14px;
+      background: transparent;
+    }
+    .pg-trust-container-custom {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .pg-trust-payment-custom {
+      background: #1a1a1a;
+      border: 1.5px solid #333;
+      border-radius: 16px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: .2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-align: center;
+    }
+    .pg-mp-logo-custom {
+      width: 28px;
+      height: auto;
+      display: inline-block;
+    }
+    .pg-trust-urgency-custom {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      animation: pg-urgencyBlink 1.2s infinite;
+    }
+    .pg-trust-urgency-custom p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.45;
+      color: #202428;
+      font-weight: 500;
+    }
+    .pg-trust-urgency-custom strong {
+      color: #000;
+      font-weight: 900;
+    }
+    .pg-urgency-dot-custom {
+      width: 9px;
+      height: 9px;
+      min-width: 9px;
+      border-radius: 50%;
+      background: #ff1493;
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+      animation: pg-dotPulse 1.2s infinite;
+    }
+    @keyframes pg-urgencyBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+    @keyframes pg-dotPulse {
+      0%, 100% { 
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+      }
+      50% { 
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, .05);
+      }
+    }
+    .pg-trust-box-custom {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #1a1a1a;
+      border: 1.5px solid #333;
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      transition: all 0.3s;
+    }
+    .pg-trust-box-custom:hover {
+      background: #222;
+      border-color: #ff1493;
+      box-shadow: 0 4px 12px rgba(255, 20, 147, 0.1);
+    }
+    .pg-trust-icon-custom {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      background: #333;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      transition: all 0.3s;
+    }
+    .pg-trust-box-custom:hover .pg-trust-icon-custom {
+      background: linear-gradient(135deg, #ff1493 0%, #ff4da6 100%);
+      box-shadow: 0 2px 8px rgba(255, 20, 147, 0.3);
+    }
+    .pg-trust-content-custom h3 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: .3px;
+    }
+    .pg-trust-content-custom p {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: #bbb;
+      font-weight: 500;
+    }
+
+    /* ====== SCIENCE SECTION ====== */
+    .pg-science-section {
+      padding: 24px 16px;
+      font-family: inherit;
+      background: #f5f5f5;
+    }
+    .pg-science-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(255, 20, 147, 0.15);
+      border: 2px solid rgba(255, 20, 147, 0.2);
+    }
+    .pg-science-inner {
+      display: flex;
+      flex-direction: column;
+    }
+    .pg-science-img-wrap {
+      width: 100%;
+    }
+    .pg-science-img {
+      width: 100% !important;
+      height: 280px !important;
+      object-fit: cover !important;
+      object-position: top !important;
+      display: block !important;
+    }
+    .pg-science-text {
+      padding: 24px 20px;
+    }
+    .pg-science-title {
+      font-size: 22px !important;
+      font-weight: 900 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin-bottom: 16px !important;
+    }
+    .pg-science-p {
+      font-size: 14px !important;
+      color: rgba(255,255,255,0.85) !important;
+      line-height: 1.75 !important;
+      margin-bottom: 14px !important;
+    }
+    .pg-science-box {
+      background: rgba(255, 20, 147, 0.1);
+      border-left: 4px solid #ff1493;
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      color: rgba(255,255,255,0.95) !important;
+      line-height: 1.65 !important;
+      margin-bottom: 20px !important;
+    }
+    .pg-science-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff1493 0%, #ff4da6 100%);
+      color: #ffffff !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      transition: all 0.3s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+    }
+    .pg-science-btn:hover {
+      background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
+      box-shadow: 0 6px 16px rgba(255, 20, 147, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* ====== RESULTS SECTION ====== */
+    .pg-results-section {
+      padding: 32px 16px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .pg-results-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .pg-results-img-wrap {
+      flex: 1;
+      min-width: 260px;
+      animation: slideInLeft 0.6s ease-out;
+    }
+    .pg-results-img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 8px 24px rgba(255, 20, 147, 0.15);
+    }
+    .pg-results-stats {
+      flex: 1;
+      min-width: 240px;
+      animation: slideInRight 0.6s ease-out;
+    }
+    .pg-results-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+    .pg-results-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .pg-stat {
+      margin-bottom: 20px;
+      opacity: 0;
+    }
+    .pg-stat-1 { animation: fadeInUp 0.6s ease-out 0.2s forwards; }
+    .pg-stat-2 { animation: fadeInUp 0.6s ease-out 0.4s forwards; }
+    .pg-stat-3 { animation: fadeInUp 0.6s ease-out 0.6s forwards; }
+    .pg-stat-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .pg-stat-pct {
+      font-size: 26px !important;
+      font-weight: 900 !important;
+      color: #ff1493 !important;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 52px;
+      animation: scaleAndPulse 0.8s ease-out forwards;
+    }
+    .pg-stat-1 .pg-stat-pct { animation-delay: 0.3s; }
+    .pg-stat-2 .pg-stat-pct { animation-delay: 0.5s; }
+    .pg-stat-3 .pg-stat-pct { animation-delay: 0.7s; }
+    .pg-stat-label {
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: #333 !important;
+      line-height: 1.4;
+      padding-top: 4px;
+    }
+    .pg-stat-bar-bg {
+      width: 100% !important;
+      height: 10px !important;
+      background: #f0f0f0 !important;
+      border-radius: 5px !important;
+      overflow: hidden !important;
+      display: block !important;
+      border: 1px solid #e0e0e0 !important;
+    }
+    .pg-stat-bar-fill {
+      height: 100% !important;
+      background: linear-gradient(90deg, #ff1493 0%, #ff4da6 100%) !important;
+      border-radius: 5px !important;
+      display: block !important;
+      min-width: 4px !important;
+      box-shadow: 0 0 8px rgba(255, 20, 147, 0.3) !important;
+      animation: fillWidth 1.2s ease-out forwards;
+      width: 0% !important;
+    }
+    .pg-stat-1 .pg-stat-bar-fill { animation-delay: 0.5s; animation-name: fillWidth94; }
+    .pg-stat-2 .pg-stat-bar-fill { animation-delay: 0.7s; animation-name: fillWidth91; }
+    .pg-stat-3 .pg-stat-bar-fill { animation-delay: 0.9s; animation-name: fillWidth89; }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleAndPulse {
+      0% { opacity: 0; transform: scale(0.5); }
+      70% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fillWidth94 {
+      from { width: 0% !important; }
+      to { width: 94% !important; }
+    }
+    @keyframes fillWidth91 {
+      from { width: 0% !important; }
+      to { width: 91% !important; }
+    }
+    @keyframes fillWidth89 {
+      from { width: 0% !important; }
+      to { width: 89% !important; }
+    }
+
+    /* ====== TIMELINE SECTION ====== */
+    .pg-timeline-section {
+      padding: 32px 16px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .pg-timeline-label {
+      display: inline-block;
+      border: 1.5px solid #ff1493;
+      color: #ff1493;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .pg-timeline-title {
+      font-size: 30px;
+      font-weight: 900;
+      color: #000;
+      margin-bottom: 6px;
+      line-height: 1.15;
+    }
+    .pg-timeline-sub {
+      font-size: 14px;
+      color: #ff1493;
+      font-weight: 700;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .pg-tl-wrap {
+      display: flex;
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .pg-tl-left-col {
+      width: 36px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .pg-tl-line-bg {
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .pg-tl-line-pink {
+      width: 100%;
+      height: 0%;
+      background: #ff1493;
+      border-radius: 4px;
+      transition: height 0.05s linear;
+      box-shadow: 0 0 8px rgba(255, 20, 147, 0.6);
+    }
+    .pg-tl-dots-col {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .pg-tl-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      border: 3px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: absolute;
+      left: 0;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+      z-index: 2;
+    }
+    .pg-tl-dot span {
+      font-size: 13px;
+      font-weight: 900;
+      color: #bbb;
+      transition: color 0.3s;
+    }
+    .pg-tl-dot.active {
+      background: #ff1493;
+      border-color: #ff1493;
+      box-shadow: 0 0 0 6px rgba(255, 20, 147, 0.2);
+    }
+    .pg-tl-dot.active span {
+      color: #fff;
+    }
+    .pg-tl-right-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .pg-tl-card {
+      background: #fff;
+      border: 2px solid #ff1493;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 2px 10px rgba(255, 20, 147, 0.1);
+      transition: box-shadow 0.3s;
+    }
+    .pg-tl-card:hover {
+      box-shadow: 0 4px 16px rgba(255, 20, 147, 0.2);
+    }
+    .pg-period {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #ff1493;
+      margin-bottom: 8px;
+    }
+    .pg-divider {
+      border: none;
+      border-top: 2px solid #ff1493;
+      margin: 0 0 10px;
+      opacity: 0.3;
+    }
+    .pg-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .pg-overtitle {
+      font-size: 10px;
+      font-weight: 800;
+      color: #ff1493;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .pg-bigtitle {
+      font-size: 15px;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .pg-desc {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ====== COMPARE SECTION ====== */
+    .pg-wrap {
+      background: #1a1a1a;
+      padding: 28px 16px 40px;
+      color: #fff;
+    }
+    .pg-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      color: #fff;
+    }
+    .pg-box {
+      max-width: 420px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .pg-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .pg-col {
+      border-radius: 14px;
+      overflow: visible;
+      box-shadow: 0 14px 28px rgba(0,0,0,.4);
+      position: relative;
+    }
+    .pg-col--good {
+      background: linear-gradient(135deg, #ff1493 0%, #ff0080 100%);
+      color: #fff;
+      padding-top: 68px;
+      z-index: 1;
+    }
+    .pg-col--bad {
+      background: #2a2a2a;
+      color: #ccc;
+      border: 1px solid #444;
+    }
+    .pg-bottle {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      pointer-events: none;
+    }
+    .pg-bottle img {
+      width: 78px;
+      height: auto;
+      display: block;
+    }
+    .pg-head {
+      text-align: center;
+      font-weight: 900;
+      font-size: 14px;
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .pg-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 14px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.25;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .pg-col--bad .pg-row {
+      border-bottom-color: rgba(255,255,255,.05);
+    }
+    .pg-row--last {
+      border-bottom: none;
+    }
+    .pg-ico {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+      flex: 0 0 20px;
+      margin-top: 1px;
+    }
+    .pg-ico--good {
+      background: rgba(255,255,255,.25);
+      color: #fff;
+    }
+    .pg-ico--bad {
+      background: rgba(255,20,147,.1);
+      color: #888;
+    }
+
+    /* ====== INGREDIENTS SECTION ====== */
+    .pg-ing-section {
+      padding: 40px 16px;
+      font-family: inherit;
+      background: #0a0a0a;
+    }
+    .pg-ing-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .pg-ing-label {
+      display: inline-block;
+      color: #ff1493;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .pg-ing-title {
+      font-size: 24px !important;
+      font-weight: 900 !important;
+      color: #ffffff !important;
+      line-height: 1.2 !important;
+      margin-bottom: 12px !important;
+    }
+    .pg-ing-desc {
+      font-size: 13px !important;
+      color: rgba(255,255,255,0.65) !important;
+      line-height: 1.6 !important;
+      max-width: 400px;
+      margin: 0 auto !important;
+    }
+    .pg-ing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .pg-ing-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 20, 147, 0.15);
+      transition: all 0.3s;
+    }
+    .pg-ing-card:hover {
+      border-color: rgba(255, 20, 147, 0.4);
+      box-shadow: 0 4px 12px rgba(255, 20, 147, 0.2);
+    }
+    .pg-ing-img-wrap {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+    .pg-ing-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+    .pg-ing-body {
+      padding: 16px 14px;
+    }
+    .pg-ing-name {
+      font-size: 13px !important;
+      font-weight: 900 !important;
+      color: #ff1493 !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 10px !important;
+    }
+    .pg-ing-text {
+      font-size: 12px !important;
+      color: rgba(255,255,255,0.75) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 8px !important;
+    }
+    .pg-ing-badge {
+      display: inline-block;
+      background: rgba(255, 20, 147, 0.15);
+      color: #ff1493 !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      padding: 6px 12px;
+      border-radius: 50px;
+      margin-top: 6px;
+      border: 1px solid rgba(255, 20, 147, 0.3);
+    }
+
+    /* ====== SLIDER SECTION ====== */
+    .pg-slider-section {
+      padding: 32px 0;
+      font-family: inherit;
+      background: #fff;
+      overflow: hidden;
+    }
+    .pg-slider-title {
+      font-size: 26px !important;
+      font-weight: 900 !important;
+      color: #000 !important;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 24px !important;
+      padding: 0 20px;
+    }
+    .pg-slider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 8px;
+    }
+    .pg-slider-viewport {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .pg-slider-track {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pg-slide {
+      min-width: 100%;
+      background: linear-gradient(135deg, #fff 0%, #fff5f9 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid #ff1493;
+    }
+    .pg-slide-img-wrap {
+      width: 100%;
+      overflow: hidden;
+    }
+    .pg-slide-img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 500px !important;
+      object-fit: contain !important;
+      object-position: center top !important;
+      display: block !important;
+      background: #f0f0f0;
+    }
+    .pg-slide-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .pg-slide-name {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #000 !important;
+      margin-bottom: 12px !important;
+    }
+    .pg-stars {
+      color: #ff1493;
+      font-size: 18px;
+    }
+    .pg-slide-text {
+      font-size: 14px !important;
+      color: #555 !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+    }
+    .pg-slider-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #ff1493;
+      background: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: #ff1493;
+      line-height: 1;
+      padding: 0;
+      transition: all 0.3s;
+    }
+    .pg-slider-btn:hover {
+      background: #ff1493;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+    }
+    .pg-slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pg-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      display: inline-block;
+    }
+    .pg-dot.active {
+      background: #ff1493;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ====== FAQ SECTIONS ====== */
+    .pg-faq-detail-section {
+      padding: 40px 16px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .pg-faq-detail-container {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pg-faq-detail-item {
+      border: 1.5px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .pg-faq-detail-item.active {
+      border-color: #ff1493;
+      background: rgba(255, 20, 147, 0.03);
+    }
+    .pg-faq-detail-question {
+      width: 100%;
+      padding: 22px 24px;
+      background: #1a1a1a;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    .pg-faq-detail-item.active .pg-faq-detail-question {
+      background: #1a1a1a;
+    }
+    .pg-faq-detail-question:hover {
+      background: #252525;
+    }
+    .pg-faq-detail-item.active .pg-faq-detail-question:hover {
+      background: rgba(255, 20, 147, 0.1);
+    }
+    .pg-faq-detail-question span:first-child {
+      font-size: 18px !important;
+      font-weight: 500 !important;
+      color: #fff !important;
+      line-height: 1.6;
+      flex: 1;
+      letter-spacing: 0.2px;
+    }
+    .pg-faq-detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      background: rgba(255, 20, 147, 0.1);
+      color: #ff1493;
+      font-weight: 900;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    .pg-faq-detail-item.active .pg-faq-detail-icon {
+      background: #ff1493;
+      color: #fff;
+      transform: rotate(45deg);
+    }
+    .pg-faq-detail-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #1a1a1a;
+    }
+    .pg-faq-detail-item.active .pg-faq-detail-answer {
+      max-height: 500px;
+    }
+    .pg-faq-detail-answer p {
+      margin: 0;
+      padding: 0 20px;
+      font-size: 17px !important;
+      color: #fff !important;
+      line-height: 1.9 !important;
+      letter-spacing: 0.3px;
+      font-weight: 400;
+    }
+    .pg-faq-detail-answer p:first-child {
+      padding-top: 20px;
+    }
+    .pg-faq-detail-answer p:last-child {
+      padding-bottom: 20px;
+    }
+    .pg-faq-detail-answer strong {
+      color: #ff1493;
+    }
+
+    .pg-faq-section {
+      padding: 40px 16px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .pg-faq-title {
+      font-size: 28px !important;
+      font-weight: 900 !important;
+      color: #000 !important;
+      text-align: center;
+      margin-bottom: 32px !important;
+      line-height: 1.2;
+    }
+    .pg-faq-container {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pg-faq-item {
+      border: 2px solid #f0f0f0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .pg-faq-item.active {
+      border-color: #ff1493;
+      background: rgba(255, 20, 147, 0.02);
+    }
+    .pg-faq-question {
+      width: 100%;
+      padding: 18px 20px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    .pg-faq-item.active .pg-faq-question {
+      background: rgba(255, 20, 147, 0.05);
+    }
+    .pg-faq-question:hover {
+      background: #f9f9f9;
+    }
+    .pg-faq-item.active .pg-faq-question:hover {
+      background: rgba(255, 20, 147, 0.08);
+    }
+    .pg-faq-question span:first-child {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #000 !important;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .pg-faq-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      background: rgba(255, 20, 147, 0.1);
+      color: #ff1493;
+      font-weight: 900;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    .pg-faq-item.active .pg-faq-icon {
+      background: #ff1493;
+      color: #fff;
+      transform: rotate(45deg);
+    }
+    .pg-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: rgba(255, 20, 147, 0.02);
+    }
+    .pg-faq-item.active .pg-faq-answer {
+      max-height: 500px;
+    }
+    .pg-faq-answer p {
+      margin: 0;
+      padding: 0 20px;
+      font-size: 14px !important;
+      color: #555 !important;
+      line-height: 1.7 !important;
+    }
+    .pg-faq-answer p:first-child {
+      padding-top: 16px;
+    }
+    .pg-faq-answer p:last-child {
+      padding-bottom: 16px;
+    }
+    .pg-faq-note {
+      background: rgba(255, 20, 147, 0.08);
+      border-left: 3px solid #ff1493;
+      padding: 12px 16px !important;
+      margin: 12px 20px 0 20px !important;
+      border-radius: 0 6px 6px 0;
+      font-weight: 600 !important;
+      color: #333 !important;
+    }
+    .pg-faq-footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .pg-faq-footer p {
+      font-size: 14px !important;
+      color: #666 !important;
+      line-height: 1.6 !important;
+      margin: 0;
+    }
+    .pg-faq-footer strong {
+      color: #ff1493;
+    }
+
+    @media (max-width: 600px) {
+      .pg-trust-section-custom {
+        padding: 14px 10px;
+      }
+      .pg-trust-payment-custom {
+        font-size: 14px;
+        border-radius: 14px;
+        gap: 7px;
+      }
+      .pg-mp-logo-custom {
+        width: 24px;
+      }
+      .pg-trust-urgency-custom p {
+        font-size: 13.5px;
+      }
+      .pg-trust-box-custom {
+        padding: 14px;
+        gap: 11px;
+        border-radius: 16px;
+      }
+      .pg-trust-icon-custom {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        font-size: 16px;
+      }
+      .pg-trust-content-custom h3 {
+        font-size: 15.5px;
+      }
+      .pg-trust-content-custom p {
+        font-size: 13.2px;
+      }
+      .pg-ing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pg-results-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pg-faq-detail-section {
+        padding: 28px 12px;
+      }
+      .pg-faq-detail-question {
+        padding: 14px 16px;
+      }
+      .pg-faq-detail-question span:first-child {
+        font-size: 16px;
+      }
+      .pg-faq-detail-icon {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        font-size: 14px;
+      }
+      .pg-faq-detail-answer p {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        font-size: 16px !important;
+      }
+      .pg-faq-section {
+        padding: 28px 12px;
+      }
+      .pg-faq-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+      .pg-faq-question {
+        padding: 14px 16px;
+      }
+      .pg-faq-question span:first-child {
+        font-size: 14px;
+      }
+      .pg-faq-icon {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        font-size: 14px;
+      }
+      .pg-faq-answer p,
+      .pg-faq-note {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        font-size: 13px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HOT SALE BANNER -->
+<div class="pg-hotsale-bar">
+  <div class="pg-hotsale-content">
+    <span class="pg-hotsale-flame">🔥</span>
+    <span class="pg-hotsale-text">OFERTA HOT SALE TERMINA EN:</span>
+    <span class="pg-hotsale-timer">
+      <span class="pg-hotsale-box" id="pg-hours">00</span>
+      <span class="pg-hotsale-sep">:</span>
+      <span class="pg-hotsale-box" id="pg-minutes">59</span>
+      <span class="pg-hotsale-sep">:</span>
+      <span class="pg-hotsale-box" id="pg-seconds">00</span>
+    </span>
+  </div>
+</div>
+
+<!-- PRODUCT INTRO -->
+<div class="pg-product-intro">
+  <div class="pg-rating-row">
+    <span class="pg-stars">★★★★★</span>
+    <span class="pg-rating-text">4.9 – 5.247 reseñas</span>
+  </div>
+  <h2 class="pg-intro-title">Power Gummies PREENTRENO + QUEMADOR DE GRASA - Máximo rendimiento en cada entrenamiento</h2>
+  <ul class="pg-bullets">
+    <li><span class="pg-check">✔</span><span><strong>Energía explosiva</strong> que se siente en minutos.</span></li>
+    <li><span class="pg-check">✔</span><span>Quema grasa mientras entrenas con <strong>máximo rendimiento.</strong></span></li>
+    <li><span class="pg-check">✔</span><span><strong>Cafeína natural + L-carnitina</strong> para resistencia y definición.</span></li>
+    <li><span class="pg-check">✔</span><span>Sabor <strong>frutos rojos</strong> 100% natural, vegano y sin azúcar.</span></li>
+    <li><span class="pg-check">✔</span><span>Dosis perfecta: <strong>2 gomitas antes de entrenar.</strong></span></li>
+    <li><span class="pg-check">✔</span><span>Resultados visibles desde la <strong>primera semana.</strong></span></li>
+    <li><span class="pg-check">✔</span><span><strong>+8.000 atletas</strong> ya entrenan con Power Gummies. Garantía 100%.</span></li>
+  </ul>
+</div>
+
+<!-- TRUST SECTION -->
+<section class="pg-trust-section-custom">
+  <div class="pg-trust-container-custom">
+    <div class="pg-trust-payment-custom">
+      <span>Pago seguro con MercadoPago</span>
+      <img src="https://cdn.shopify.com/s/files/1/0962/6481/4962/files/mercaodpafg-Photoroom.png?v=1777230312" alt="MercadoPago" class="pg-mp-logo-custom">
+    </div>
+    <div class="pg-trust-urgency-custom">
+      <span class="pg-urgency-dot-custom"></span>
+      <p>¡Apurate! Se está agotando rápido, casi <strong>87% del stock vendido</strong></p>
+    </div>
+    <div class="pg-trust-box-custom">
+      <div class="pg-trust-icon-custom">🚚</div>
+      <div class="pg-trust-content-custom">
+        <h3>ENVÍO GRATIS</h3>
+        <p>Control de calidad en cada pedido para garantizar una entrega perfecta.</p>
+      </div>
+    </div>
+    <div class="pg-trust-box-custom">
+      <div class="pg-trust-icon-custom">🛡️</div>
+      <div class="pg-trust-content-custom">
+        <h3>GARANTÍA DE 60 DÍAS</h3>
+        <p>Si no notás resultados, te devolvemos tu dinero. Sin preguntas. 100% libre de riesgo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE SECTION -->
+<div class="pg-science-section">
+  <div class="pg-science-card">
+    <div class="pg-science-inner">
+      <div class="pg-science-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/MEDICO_UGC_PRODUCTO_1.webp?v=1777944325" alt="Ciencia Power Gummies" class="pg-science-img" />
+      </div>
+      <div class="pg-science-text">
+        <h2 class="pg-science-title">¿Qué necesita tu cuerpo para rendir al máximo?</h2>
+        <p class="pg-science-p"><strong>La energía y el rendimiento muscular</strong> dependen de nutrientes adecuados en el momento exacto, activando resistencia y quema de grasa de forma <strong>natural y sostenida.</strong></p>
+        <p class="pg-science-p">Con años de entrenamientos intensos, tu cuerpo agota recursos y pierde capacidad de recuperación rápida, generando fatiga y mesetas en resultados.</p>
+        <div class="pg-science-box">Las gomitas Power Gummies™ actúan sobre tu sistema energético, potenciando energía sin efectos secundarios.</div>
+        <a href="#comprar" class="pg-science-btn">Quiero maximizar mi rendimiento hoy</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS SECTION -->
+<div class="pg-results-section">
+  <div class="pg-results-inner">
+    <div class="pg-results-img-wrap">
+      <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/RESULTADOS_1.webp?v=1777944344" alt="Resultados Power Gummies" class="pg-results-img" />
+    </div>
+    <div class="pg-results-stats">
+      <h2 class="pg-results-title">Resultados Reales</h2>
+      <p class="pg-results-desc">Basado en encuesta a <strong>más de 2.300 personas</strong> que tomaron <strong>2 gomitas diarias durante 30 días.</strong></p>
+      <div class="pg-stat pg-stat-1">
+        <div class="pg-stat-top">
+          <span class="pg-stat-pct">94%</span>
+          <span class="pg-stat-label">Notó aumento de energía desde el primer entrenamiento</span>
+        </div>
+        <div class="pg-stat-bar-bg"><div class="pg-stat-bar-fill" style="width:94% !important"></div></div>
+      </div>
+      <div class="pg-stat pg-stat-2">
+        <div class="pg-stat-top">
+          <span class="pg-stat-pct">91%</span>
+          <span class="pg-stat-label">Observó quema de grasa y definición en 2 semanas</span>
+        </div>
+        <div class="pg-stat-bar-bg"><div class="pg-stat-bar-fill" style="width:91% !important"></div></div>
+      </div>
+      <div class="pg-stat pg-stat-3">
+        <div class="pg-stat-top">
+          <span class="pg-stat-pct">89%</span>
+          <span class="pg-stat-label">Reportó mejor recuperación y resistencia sostenida</span>
+        </div>
+        <div class="pg-stat-bar-bg"><div class="pg-stat-bar-fill" style="width:89% !important"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE SECTION -->
+<div class="pg-timeline-section">
+  <div style="text-align:center;">
+    <div class="pg-timeline-label">TRANSFORMACIÓN REAL</div>
+    <h2 class="pg-timeline-title">2 gomitas al día</h2>
+    <p class="pg-timeline-sub">...y tu rendimiento alcanza otro nivel</p>
+  </div>
+  <div class="pg-tl-wrap">
+    <div class="pg-tl-left-col">
+      <div class="pg-tl-line-bg"><div class="pg-tl-line-pink" id="pg-line-pink"></div></div>
+      <div class="pg-tl-dots-col">
+        <div class="pg-tl-dot" id="pg-dot-0"><span>✔</span></div>
+        <div class="pg-tl-dot" id="pg-dot-1"><span>✔</span></div>
+        <div class="pg-tl-dot" id="pg-dot-2"><span>✔</span></div>
+      </div>
+    </div>
+    <div class="pg-tl-right-col">
+      <div class="pg-tl-card" id="pg-card-0">
+        <div class="pg-period">⚡ <span>PRIMER ENTRENAMIENTO</span></div>
+        <hr class="pg-divider">
+        <img class="pg-img" src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/PRIMER_ENTRENAMIENTO.webp?v=1777944304" alt="Primer entrenamiento" />
+        <p class="pg-overtitle">ENERGÍA EXPLOSIVA AL MINUTO</p>
+        <p class="pg-bigtitle">Sentís el cambio antes de entrenar</p>
+        <p class="pg-desc">La cafeína natural actúa de inmediato. Tu enfoque mental se agudiza y los músculos responden con más fuerza.</p>
+      </div>
+      <div class="pg-tl-card" id="pg-card-1">
+        <div class="pg-period">🔥 <span>SEMANA 1</span></div>
+        <hr class="pg-divider">
+        <img class="pg-img" src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/SEMANA_1.webp?v=1777944305" alt="Semana 1" />
+        <p class="pg-overtitle">EL METABOLISMO SE DISPARA</p>
+        <p class="pg-bigtitle">Quemas más, rindes más</p>
+        <p class="pg-desc">Con cada entrenamiento, la quema de grasa acelera y ya notás primeros cambios en tu físico y energía.</p>
+      </div>
+      <div class="pg-tl-card" id="pg-card-2">
+        <div class="pg-period">💪 <span>SEMANA 3</span></div>
+        <hr class="pg-divider">
+        <img class="pg-img" src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/SEMANA_3.webp?v=1777944306" alt="Semana 3" />
+        <p class="pg-overtitle">TRANSFORMACIÓN VISIBLE</p>
+        <p class="pg-bigtitle">Músculo definido, energía imparable</p>
+        <p class="pg-desc">El 94% logra resultados visibles en 21 días. Más definición, mejor vasculación y rendimiento máximo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE SECTION -->
+<section class="pg-wrap">
+  <div class="pg-title">Power Gummies™ vs. Otras Marcas</div>
+  <div class="pg-box">
+    <div class="pg-cols">
+      <div class="pg-col pg-col--good">
+        <div class="pg-bottle">
+          <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/PRODUCTO_VS_OTRAS.webp?v=1777944355" alt="Power Gummies">
+        </div>
+        <div class="pg-head">Power Gummies™</div>
+        <div class="pg-row"><span class="pg-ico pg-ico--good">✓</span><span>Energía explosiva en minutos</span></div>
+        <div class="pg-row"><span class="pg-ico pg-ico--good">✓</span><span>Quema de grasa acelerada</span></div>
+        <div class="pg-row"><span class="pg-ico pg-ico--good">✓</span><span>100% natural y sin azúcar</span></div>
+        <div class="pg-row"><span class="pg-ico pg-ico--good">✓</span><span>Resultados desde semana 1</span></div>
+        <div class="pg-row pg-row--last"><span class="pg-ico pg-ico--good">✓</span><span>Garantía 100%</span></div>
+      </div>
+      <div class="pg-col pg-col--bad">
+        <div class="pg-head">Otros Preentrenos</div>
+        <div class="pg-row pg-row--bad"><span class="pg-ico pg-ico--bad">×</span><span>Energía artificial</span></div>
+        <div class="pg-row pg-row--bad"><span class="pg-ico pg-ico--bad">×</span><span>Químicos sintéticos</span></div>
+        <div class="pg-row pg-row--bad"><span class="pg-ico pg-ico--bad">×</span><span>Llenos de azúcar</span></div>
+        <div class="pg-row pg-row--bad"><span class="pg-ico pg-ico--bad">×</span><span>Efectos secundarios</span></div>
+        <div class="pg-row pg-row--bad pg-row--last"><span class="pg-ico pg-ico--bad">×</span><span>Sin garantía real</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS SECTION -->
+<div class="pg-ing-section">
+  <div class="pg-ing-header">
+    <span class="pg-ing-label">INGREDIENTES</span>
+    <h2 class="pg-ing-title">Fórmula potente: Ingredientes con respaldo científico</h2>
+    <p class="pg-ing-desc">Una combinación pensada para explosionar tu energía, quemar grasa y maximizar tu rendimiento.</p>
+  </div>
+  <div class="pg-ing-grid">
+    <div class="pg-ing-card">
+      <div class="pg-ing-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/CAFEINA_NATURAL.webp?v=1777944295" alt="Cafeína Natural" class="pg-ing-img" />
+      </div>
+      <div class="pg-ing-body">
+        <h3 class="pg-ing-name">CAFEÍNA NATURAL</h3>
+        <p class="pg-ing-text">Energía explosiva que aumenta el enfoque mental y acelera el metabolismo.</p>
+        <p class="pg-ing-text">Mejora la resistencia muscular hasta un 30%.</p>
+        <div class="pg-ing-badge">Energía pura. Máximo enfoque.</div>
+      </div>
+    </div>
+    <div class="pg-ing-card">
+      <div class="pg-ing-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/L-CARNITINA.webp?v=1777944298" alt="L-Carnitina" class="pg-ing-img" />
+      </div>
+      <div class="pg-ing-body">
+        <h3 class="pg-ing-name">L-CARNITINA</h3>
+        <p class="pg-ing-text">Aminoácido que transporta ácidos grasos para convertirlos en energía pura.</p>
+        <p class="pg-ing-text">Actúa en simultáneo para activar la quema de grasa acelerada.</p>
+        <div class="pg-ing-badge">Quema grasa. Más definición.</div>
+      </div>
+    </div>
+    <div class="pg-ing-card">
+      <div class="pg-ing-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/TAURINA_FRUTOS_ROJOS.webp?v=1777944299" class="pg-ing-img" />
+      </div>
+      <div class="pg-ing-body">
+        <h3 class="pg-ing-name">TAURINA</h3>
+        <p class="pg-ing-text">Aminoácido que mejora la contracción muscular y optimiza la recuperación post-entreno.</p>
+        <p class="pg-ing-text">100% natural, vegana y sin efectos secundarios.</p>
+        <div class="pg-ing-badge">Mejor recuperación. Sin fatiga.</div>
+      </div>
+    </div>
+    <div class="pg-ing-card">
+      <div class="pg-ing-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/GLUCOSIDOS_DE_ESTEVIOL.webp?v=1777944296" class="pg-ing-img" />
+      </div>
+      <div class="pg-ing-body">
+        <h3 class="pg-ing-name">GLUCÓSIDOS DE ESTEVIOL</h3>
+        <p class="pg-ing-text">Endulzante natural, sin azúcar añadida e índice glucémico cero.</p>
+        <p class="pg-ing-text">Sabor frutos rojos sin comprometer la fórmula.</p>
+        <div class="pg-ing-badge">Sin azúcar. Sabor natural.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS SLIDER -->
+<div class="pg-slider-section">
+  <h2 class="pg-slider-title">+8.000 personas ya transformaron su rendimiento 👇</h2>
+  <div class="pg-slider-wrap">
+    <button class="pg-slider-btn pg-slider-prev" id="pg-prev">&#8249;</button>
+    <div class="pg-slider-viewport">
+      <div class="pg-slider-track" id="pg-track">
+        <div class="pg-slide">
+          <div class="pg-slide-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/AVATAR_1.webp?v=1777944347" alt="Carlos R." class="pg-slide-img" />
+          </div>
+          <div class="pg-slide-body">
+            <div class="pg-slide-name">Carlos R. — <span class="pg-stars">★★★★★</span></div>
+            <p class="pg-slide-text">"Pasé de entrenar sin energía a tener un rendimiento brutal. Las gomitas me dan ese impulso y la quema de grasa es notoria."</p>
+          </div>
+        </div>
+        <div class="pg-slide">
+          <div class="pg-slide-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/AVATAR_2.webp?v=1777944349" alt="Sofia T." class="pg-slide-img" />
+          </div>
+          <div class="pg-slide-body">
+            <div class="pg-slide-name">Sofia T. — <span class="pg-stars">★★★★★</span></div>
+            <p class="pg-slide-text">"Probé otros preentrenos carísimos y nada comparado con esto. Mi rendimiento se duplicó y la recuperación es mucho mejor."</p>
+          </div>
+        </div>
+        <div class="pg-slide">
+          <div class="pg-slide-img-wrap">
+            <img src="https://cdn.shopify.com/s/files/1/0812/0215/1641/files/AVATAR_3.webp?v=1777944350" alt="Mateo G." class="pg-slide-img" />
+          </div>
+          <div class="pg-slide-body">
+            <div class="pg-slide-name">Mateo G. — <span class="pg-stars">★★★★★</span></div>
+            <p class="pg-slide-text">"Lo mejor es que no tengo nervios. Es pura energía limpia, foco mental y resultados. Mis compañeros me preguntaban qué estaba tomando."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="pg-slider-btn pg-slider-next" id="pg-next">&#8250;</button>
+  </div>
+  <div class="pg-slider-dots">
+    <span class="pg-dot active" data-index="0"></span>
+    <span class="pg-dot" data-index="1"></span>
+    <span class="pg-dot" data-index="2"></span>
+  </div>
+</div>
+
+<!-- FAQ DETAIL SECTION -->
+<div class="pg-faq-detail-section">
+  <div class="pg-faq-detail-container">
+    <div class="pg-faq-detail-item">
+      <button class="pg-faq-detail-question">
+        <span>¿Qué son las gomitas Power Gummies™?</span>
+        <span class="pg-faq-detail-icon">+</span>
+      </button>
+      <div class="pg-faq-detail-answer">
+        <p>Son gomitas funcionales con cafeína natural y L-carnitina que potencian energía explosiva, aceleran la quema de grasa y mejoran el enfoque mental. 2 gomitas al día, sabor frutos rojos.</p>
+      </div>
+    </div>
+    <div class="pg-faq-detail-item">
+      <button class="pg-faq-detail-question">
+        <span>¿Qué contienen las gomitas Power Gummies™?</span>
+        <span class="pg-faq-detail-icon">+</span>
+      </button>
+      <div class="pg-faq-detail-answer">
+        <p>Cafeína natural, L-carnitina, taurina, pectina, glucósidos de esteviol, ácido cítrico. 100% vegano, sin azúcar, sin TACC.</p>
+      </div>
+    </div>
+    <div class="pg-faq-detail-item">
+      <button class="pg-faq-detail-question">
+        <span>¿Cómo es el consumo diario?</span>
+        <span class="pg-faq-detail-icon">+</span>
+      </button>
+      <div class="pg-faq-detail-answer">
+        <p>Se recomienda consumir <strong>2 gomitas por día</strong>, preferentemente <strong>15-20 minutos antes de entrenar</strong>. Tomalas con agua para mejor absorción.</p>
+      </div>
+    </div>
+    <div class="pg-faq-detail-item">
+      <button class="pg-faq-detail-question">
+        <span>¿Me acompaña Power Gummies en todo el entrenamiento?</span>
+        <span class="pg-faq-detail-icon">+</span>
+      </button>
+      <div class="pg-faq-detail-answer">
+        <p>Sí, de forma completa. Power Gummies actúa potenciando tu energía desde el primer minuto. La L-carnitina trabaja todo el entrenamiento acelerando la quema de grasa y optimizando la resistencia.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ MAIN SECTION -->
+<div class="pg-faq-section">
+  <h2 class="pg-faq-title">Preguntas Frecuentes</h2>
+  <div class="pg-faq-container">
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Realmente veo resultados en la primera semana?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p>Muchos atletas notan energía explosiva desde el primer entrenamiento. Las gomitas regulan tu sistema y potencian la quema de grasa desde el día 1. Los resultados visibles en definición varían, pero la energía la sentís al minuto.</p>
+      </div>
+    </div>
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Las gomitas Power Gummies tienen efectos secundarios?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p>Están formuladas para ser bien toleradas sin nerviosismo. A diferencia de bebidas energéticas, nuestra cafeína natural se absorbe sin picos de adrenalina. Si tenés condiciones médicas, consulta con un profesional.</p>
+      </div>
+    </div>
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Por qué Power Gummies es diferente?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p>Los suplementos en polvo dan energía temporal. Power Gummies actúa de forma sostenida gracias a L-carnitina y taurina. Es la única fórmula en gomas que combina energía + quema de grasa. Resultados reales.</p>
+      </div>
+    </div>
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Cuál es el consumo diario y cuántas gomitas trae cada envase?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p><strong>2 gomitas al día</strong>, preferentemente 15-20 minutos antes de entrenar. Cada envase trae 60 gomitas, equivalente a 30 días.</p>
+      </div>
+    </div>
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Cuánto demora en despacharse el pedido?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p>Despachamos de 3 a 5 días hábiles. Recibirás el código de seguimiento en tu correo electrónico para monitorear el envío.</p>
+        <p class="pg-faq-note">📦 <strong>Envío gratis</strong> a todo el país. El producto tiene control de calidad antes de ser despachado.</p>
+      </div>
+    </div>
+    <div class="pg-faq-item">
+      <button class="pg-faq-question">
+        <span>¿Qué pasa si no veo resultados?</span>
+        <span class="pg-faq-icon">+</span>
+      </button>
+      <div class="pg-faq-answer">
+        <p>Tenemos <strong>garantía de 60 días sin riesgo</strong>. Si no notás diferencia, te devolvemos tu dinero completo sin preguntas. Creemos en nuestro producto porque sabemos que funciona.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pg-faq-footer">
+    <p>¿Más dudas? Estamos acá para ayudarte. <strong>Contactanos</strong> cuando lo necesites.</p>
+  </div>
+</div>
+
+<script>
+// HOT SALE TIMER
+(function() {
+  var DURATION_MINUTES = 59;
+  var STORAGE_KEY = 'pg_hotsale_end';
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function getEndTime() {
+    var stored = localStorage.getItem(STORAGE_KEY);
+    var now = Date.now();
+    if (stored) {
+      var end = parseInt(stored, 10);
+      if (end > now) return end;
+    }
+    var newEnd = now + DURATION_MINUTES * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, newEnd);
+    return newEnd;
+  }
+  var endTime = getEndTime();
+  var hoursEl = document.getElementById('pg-hours');
+  var minutesEl = document.getElementById('pg-minutes');
+  var secondsEl = document.getElementById('pg-seconds');
+  function tick() {
+    var diff = endTime - Date.now();
+    if (diff <= 0) {
+      localStorage.removeItem(STORAGE_KEY);
+      endTime = getEndTime();
+      diff = endTime - Date.now();
+    }
+    var totalSeconds = Math.floor(diff / 1000);
+    var hours = Math.floor(totalSeconds / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = totalSeconds % 60;
+    if (hoursEl) hoursEl.textContent = pad(hours);
+    if (minutesEl) minutesEl.textContent = pad(minutes);
+    if (secondsEl) secondsEl.textContent = pad(seconds);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// TIMELINE
+(function() {
+  function init() {
+    var linePink = document.getElementById('pg-line-pink');
+    var lineBg = document.querySelector('.pg-tl-line-bg');
+    var leftCol = document.querySelector('.pg-tl-left-col');
+    var dots = [document.getElementById('pg-dot-0'), document.getElementById('pg-dot-1'), document.getElementById('pg-dot-2')];
+    var cards = [document.getElementById('pg-card-0'), document.getElementById('pg-card-1'), document.getElementById('pg-card-2')];
+    if (!linePink || !lineBg || !leftCol) return;
+    function positionDots() {
+      var colRect = leftCol.getBoundingClientRect();
+      var scrollTop = window.scrollY;
+      var colTop = colRect.top + scrollTop;
+      cards.forEach(function(card, i) {
+        if (!card || !dots[i]) return;
+        var cardRect = card.getBoundingClientRect();
+        var cardTop = cardRect.top + scrollTop;
+        var offset = cardTop - colTop + 14;
+        dots[i].style.top = offset + 'px';
+      });
+    }
+    function update() {
+      var triggerY = window.innerHeight * 0.6;
+      var lineRect = lineBg.getBoundingClientRect();
+      var lineH = lineBg.offsetHeight;
+      var scrolled = triggerY - lineRect.top;
+      var pct = Math.min(Math.max(scrolled / lineH * 100, 0), 100);
+      linePink.style.height = pct + '%';
+      dots.forEach(function(dot, i) {
+        if (!dot || !cards[i]) return;
+        var cardTop = cards[i].getBoundingClientRect().top + 14;
+        if (cardTop <= triggerY) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', function() { positionDots(); update(); }, { passive: true });
+    positionDots();
+    update();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+// SLIDER
+(function() {
+  var track = document.getElementById('pg-track');
+  var prev = document.getElementById('pg-prev');
+  var next = document.getElementById('pg-next');
+  var dots = document.querySelectorAll('.pg-dot');
+  var current = 0;
+  var total = 3;
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('active', i === current);
+    });
+  }
+  if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
+  if (next) next.addEventListener('click', function() { goTo(current + 1); });
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      goTo(parseInt(dot.getAttribute('data-index')));
+    });
+  });
+  var startX = 0;
+  if (track) {
+    track.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        goTo(diff > 0 ? current + 1 : current - 1);
+      }
+    }, { passive: true });
+  }
+})();
+
+// FAQ
+(function() {
+  var faqItems = document.querySelectorAll('.pg-faq-detail-item');
+  faqItems.forEach(function(item) {
+    var question = item.querySelector('.pg-faq-detail-question');
+    question.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      faqItems.forEach(function(otherItem) {
+        otherItem.classList.remove('active');
+      });
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+  var faqItems2 = document.querySelectorAll('.pg-faq-item');
+  faqItems2.forEach(function(item) {
+    var question = item.querySelector('.pg-faq-question');
+    question.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+      faqItems2.forEach(function(otherItem) {
+        otherItem.classList.remove('active');
+      });
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
